@@ -40,9 +40,7 @@ urlpatterns = [
     #     schools
     path('schools/', views.schools, name="schools"),
 
-    path('performance/',views.performance, name= "performance")
+    path('performance/', views.performance, name="performance"),
 
-
+    path('contacts/',views.contacts, name="contacts")
 ]
-
-

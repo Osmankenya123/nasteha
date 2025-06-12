@@ -1,5 +1,3 @@
-
-
 from django.shortcuts import render
 
 
@@ -23,6 +21,9 @@ def products(request):
 def agriculture(request):
     return render(request, 'agriculture.html')
 
+def contacts( request):
+    return render(request,'contacts.html')
+
 
 # Business
 def business(request):
@@ -43,6 +44,9 @@ def tourism(request):
 def schools(request):
     return render(request, 'schools.html')
 
+
 # performance
 def performance(request):
-    return render( request,'performance.html')
+    return render(request, 'performance.html')
+
+
