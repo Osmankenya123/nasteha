@@ -18,7 +18,7 @@ class Login(models.Model):
       
 class Email(models.Model):
       email=models.CharField(max_length=40)
-      birth_day_time=models.CharField(max_length=40)
+      birth_day_time=models.DateTimeField(verbose_name=None,auto_now=False,auto_now_add=False)
 
       def __str__(self):
           return self.email

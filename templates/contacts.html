@@ -59,7 +59,8 @@
         <div class="col-4 first-div">
             <br>
             <h2> Sign up </h2>
-            <form action="/action_page.php">
+            <form method="post">
+                {% csrf_token %}
 
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname" value=""><br>
@@ -75,7 +76,7 @@
         <div class="col-4 second-div">
             <br>
             <h2>Login </h2>
-            <form action="/action_page.php">
+            <form method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username"><br>
                 <label for="pwd">Password:</label><br>
@@ -102,6 +103,7 @@
     </div>
 
 </div>
+
 <div class="container-fluid mb-2">
     <div class="row">
         <div class="col-4 first-div">
@@ -176,7 +178,9 @@
                 <input type="text" id="operator" name="operator"><br>
                 <label for="operator_level">Operator level:</label> <br>
                 <input type="text" id="operator_level" name="operator_level"><br>
-                <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+                <label for="upload">Upload pic</label><br>
+                <input type="file" name="file" id="upoad"><br>
+                <input type="submit" value="Submit">
             </form>
 
         </div>

@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect,HttpResponse
+from django.contrib.auth.models import User
+from .models import Signup, Login
 
 
 def index(request):
@@ -22,6 +24,15 @@ def agriculture(request):
     return render(request, 'agriculture.html')
 
 def contacts( request):
+    if request.method=="POST":
+        first_name=request.POST.get("fname")
+        middle_name=request.POST.get("mname")
+        last_name=request.POST.get("lname")
+
+        query=Signup(first_name=first_name,middle_name=middle_name,last_name=last_name)
+        query.save()
+        return redirect("/")
+
     return render(request,'contacts.html')
 
 

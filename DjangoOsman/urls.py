@@ -22,7 +22,7 @@ from django.urls import path
 from DjangoOsman import views
 
 urlpatterns = [
-    #     path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
     path('', views.index, name="home"),
     path('about/', views.about, name="about"),
