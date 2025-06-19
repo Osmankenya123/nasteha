@@ -24,24 +24,31 @@ def products(request):
 def agriculture(request):
     return render(request, 'agriculture.html')
 
-def contacts(request, username=None):
+def contacts(request):
     if request.method=="POST":
         first_name=request.POST.get("fname")
         middle_name=request.POST.get("mname")
         last_name=request.POST.get("lname")
+        username = request.POST.get("username")
+        password = request.POST.get("pwd")
+        query1 = Login(username=username, password=password)
+        query1.save()
+
 
         query=Signup(first_name=first_name,middle_name=middle_name,last_name=last_name)
         query.save()
         return redirect("/")
 
+    # if request.method=="POST":
+    #     username=request.POST.get("username")
+    #     password=request.POST.get("pwd")
+    #
+    #     query1=Login(username=username,password=password)
+    #     query1.save()
+    #     return redirect("/")
+
     if request.method=="POST":
-        username=request.POST.get("username")
-        password=request.POST.get("pwd")
-
-        query=Login(username=username,password=password)
-        query.save()
-        return redirect("/")
-
+        email=request.POST.get("birth_day_time")
 
 
     return render(request,'contacts.html')
