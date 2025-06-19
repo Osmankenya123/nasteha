@@ -1,3 +1,4 @@
+from django.contrib.auth import login
 from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth.models import User
 from .models import Signup, Login
@@ -23,7 +24,7 @@ def products(request):
 def agriculture(request):
     return render(request, 'agriculture.html')
 
-def contacts( request):
+def contacts(request, username=None):
     if request.method=="POST":
         first_name=request.POST.get("fname")
         middle_name=request.POST.get("mname")
@@ -32,6 +33,16 @@ def contacts( request):
         query=Signup(first_name=first_name,middle_name=middle_name,last_name=last_name)
         query.save()
         return redirect("/")
+
+    if request.method=="POST":
+        username.POST.get("username")
+        password=request.POST.get("pwd")
+
+        query=Login(user_name=username,password=password)
+        query.save()
+        return redirect("%")
+
+
 
     return render(request,'contacts.html')
 
