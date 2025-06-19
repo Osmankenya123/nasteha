@@ -10,29 +10,29 @@ class Signup(models.Model):
 
 
 class Login(models.Model):
-      username=models.CharField(max_length=30)
-      password=models.CharField(max_length=20)
+      username=models.CharField(max_length=30,null=True)
+      password=models.CharField(max_length=20,null=True)
 
       def __str__(self):
           return self.username
       
 class Email(models.Model):
-      email=models.CharField(max_length=40)
-      birth_day_time=models.DateTimeField(verbose_name=None,auto_now=False,auto_now_add=False)
+      email=models.CharField(max_length=40,null=True)
+      birth_day_time=models.DateTimeField(verbose_name=None,auto_now=False,auto_now_add=False,null=True)
 
       def __str__(self):
           return self.email
 
 class  Feedback(models.Model):
-        massage=models.TextField()
+        message=models.TextField( null=True)
 
         def __str__(self):
-            return self.massage
+            return self.message
 
 class Selection(models.Model):
-       bike=models.CharField(max_length=30)
-       car=models.CharField(max_length=30)
-       boat=models.CharField(max_length=30)
+       bike=models.CharField(max_length=30,null=True)
+       car=models.CharField(max_length=30,null=True)
+       boat=models.CharField(max_length=30,null=True)
 
        def __str__(self):
            return f"{self.bike} : {self.car} : {self.boat}"

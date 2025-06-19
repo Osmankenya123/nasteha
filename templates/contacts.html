@@ -113,7 +113,8 @@
             <h4>Feedback Comments</h4>
             <p> We appreciate your valuable feedback</p>
 
-            <form action="/action_page.php">
+            <form method="post">
+                {% csrf_token %}
          <textarea name="message" style="width:300px; height:200px;">
           </textarea>
                 <br>
@@ -123,7 +124,8 @@
 
         </div>
         <div class="col-4 second-div">
-            <form action="/action_page.php">
+            <form method="POST">
+                {% csrf_token %}
                 <br>
                 <h4> Selection type </h4>
                 <p> Please Choose the one you have from the following list </p>
