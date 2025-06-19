@@ -1,7 +1,7 @@
 from django.contrib.auth import login
 from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth.models import User
-from .models import Signup, Login
+from .models import Signup, Login, Email
 
 
 def index(request):
