@@ -35,7 +35,7 @@ def contacts(request, username=None):
         return redirect("/")
 
     if request.method=="POST":
-        username.POST.get("username")
+        username=request.POST.get("username")
         password=request.POST.get("pwd")
 
         query=Login(username=username,password=password)
