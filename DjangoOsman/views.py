@@ -38,9 +38,9 @@ def contacts(request, username=None):
         username.POST.get("username")
         password=request.POST.get("pwd")
 
-        query=Login(user_name=username,password=password)
+        query=Login(username=username,password=password)
         query.save()
-        return redirect("%")
+        return redirect("/")
 
 
 
