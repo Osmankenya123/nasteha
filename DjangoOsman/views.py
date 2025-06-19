@@ -28,9 +28,9 @@ def agriculture(request):
 
 def contacts(request):
     if request.method=="POST":
-        first_name=request.POST.get("fname")
-        middle_name=request.POST.get("mname")
-        last_name=request.POST.get("lname")
+        first_name=request.POST.get("first_name")
+        middle_name=request.POST.get("middle_name")
+        last_name=request.POST.get("last_name")
         username = request.POST.get("username")
         password = request.POST.get("pwd")
         query1 = Login(username=username, password=password)
